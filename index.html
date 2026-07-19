@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva San Juan de Frías · Sección El Paují · Un refugio del ave más amenazada de Colombia</title>
+  <meta name="description" content="218 hectáreas de bosque húmedo tropical en el Magdalena Medio — uno de los últimos refugios del paují de pico azul (Crax alberti), En Peligro Crítico. Una oportunidad de conservación medible." />
+  <meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1b1a17" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jfchica86.github.io/reserva-pauji/" />
+  <meta property="og:title" content="Reserva San Juan de Frías · Sección El Paují" />
+  <meta property="og:description" content="Uno de los últimos refugios reales del ave más amenazada de Colombia. 218 ha en el Magdalena Medio." />
+  <meta property="og:image" content="https://jfchica86.github.io/reserva-pauji/assets/hero-poster.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Hanken Grotesk — tipografía de marca juanchica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================================
+     * Design tokens — sistema de marca juanchica
+     * Paleta natural: Crudo · Blanco · Tinta · Piedra · Tierra
+     * Tipografía: Hanken Grotesk (display) + system stack (body)
+     * ================================================================ */
+    :root {
+      --bg: #f2eee6;              /* Crudo */
+      --bg-grouped: #ede6d8;      /* Crudo profundo */
+      --surface: #ffffff;
+      --separator: rgba(27, 26, 23, 0.16);
+      --border: #e2dacb;
+      --border-strong: rgba(27, 26, 23, 0.24);
+
+      --ink: #1b1a17;             /* Tinta */
+      --ink-secondary: #5b564c;
+      --ink-tertiary: #8c8578;    /* Piedra */
+      --ink-quaternary: #a39a88;
+
+      --accent: #b0764e;          /* Tierra viva */
+      --accent-hover: #9d6743;
+      --accent-soft: rgba(176, 118, 78, 0.12);
+      --accent-foreground: #f2eee6;
+
+      --forest: #3a4a3f;          /* verde bosque, sub-acento sobrio */
+      --crit: #a8412e;            /* rojo tierra para "En Peligro Crítico" */
+
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.04);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.04);
+      --shadow-xl: 0 28px 60px rgba(0,0,0,.16), 0 8px 20px rgba(0,0,0,.06);
+
+      --radius-sm: 8px;
+      --radius: 12px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --maxw: 1120px;
+      --pad: clamp(20px, 5vw, 48px);
+
+      --font-display: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      line-height: 1.55;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Tipografía display ---------- */
+    .display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+    .accent-italic { font-style: italic; color: var(--accent); }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 22px; height: 1.5px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    /* ---------- Layout ---------- */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+    section { padding: clamp(72px, 11vw, 140px) 0; }
+    .lead {
+      font-size: clamp(18px, 2.1vw, 21px);
+      color: var(--ink-secondary);
+      max-width: 60ch;
+      line-height: 1.6;
+    }
+
+    /* ---------- Botones ---------- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 600; font-size: 15.5px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .2s var(--ease-out), background .2s var(--ease-out), box-shadow .2s var(--ease-out), color .2s var(--ease-out), border-color .2s var(--ease-out);
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: var(--accent-foreground); box-shadow: var(--shadow-md); }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .btn-light { background: rgba(242,238,230,.10); color: #f2eee6; border-color: rgba(242,238,230,.30); backdrop-filter: blur(8px); }
+    .btn-light:hover { background: rgba(242,238,230,.18); transform: translateY(-2px); }
+    .btn-arrow { font-size: 1.1em; line-height: 0; transition: transform .2s var(--ease-out); }
+    .btn:hover .btn-arrow { transform: translateX(3px); }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: background .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s var(--ease-out);
+      border-bottom: 1px solid transparent;
+    }
+    header.nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; }
+    header.nav.scrolled {
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom-color: var(--separator);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); color: #f2eee6; transition: color .3s var(--ease-out); }
+    header.nav.scrolled .brand { color: var(--ink); }
+    .brand .mark { width: 26px; height: 26px; }
+    .brand .name { font-weight: 600; letter-spacing: -0.02em; font-size: 18px; line-height: 1; }
+    .brand .name small { display: block; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: .6; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a.link { font-family: var(--font-display); font-weight: 500; font-size: 14.5px; color: #f2eee6; opacity: .85; transition: opacity .2s, color .3s; }
+    header.nav.scrolled .nav-links a.link { color: var(--ink-secondary); }
+    .nav-links a.link:hover { opacity: 1; color: var(--accent); }
+    @media (max-width: 860px) { .nav-links a.link { display: none; } }
+
+    /* Selector de idioma */
+    .lang-toggle {
+      font-family: var(--font-display); font-weight: 600; font-size: 12.5px; letter-spacing: .06em;
+      color: #f2eee6; border: 1px solid rgba(242,238,230,.4); background: transparent;
+      border-radius: 999px; padding: 7px 11px; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: color .3s var(--ease-out), border-color .3s var(--ease-out), background .2s var(--ease-out);
+    }
+    .lang-toggle svg { width: 13px; height: 13px; opacity: .85; }
+    header.nav.scrolled .lang-toggle { color: var(--ink-secondary); border-color: var(--border-strong); }
+    .lang-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; color: #f2eee6; overflow: hidden; padding: 0; }
+    .hero-media { position: absolute; inset: 0; z-index: 0; background: #1b1a17; }
+    .hero-media video, .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+    /* Zoom leve para recortar los rótulos quemados del video (arriba-izq. y timestamp inferior) */
+    .hero-media video { transform: scale(1.22); transform-origin: center center; }
+    /* Fallback visual mientras no hay video: bosque en degradado */
+    .hero-media.placeholder { background:
+        radial-gradient(120% 90% at 70% 20%, #47513f 0%, transparent 55%),
+        radial-gradient(130% 100% at 20% 90%, #2b3327 0%, transparent 60%),
+        linear-gradient(160deg, #313a2d 0%, #1b201a 100%); }
+    .hero-scrim { position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to top, rgba(15,16,13,.92) 0%, rgba(15,16,13,.58) 40%, rgba(15,16,13,.28) 66%, rgba(15,16,13,.55) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(56px, 9vw, 110px); padding-top: 120px; }
+    .hero h1 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.025em; line-height: 1.04;
+      font-size: clamp(38px, 6.6vw, 82px); max-width: 16ch; color: #f6f2ea; text-wrap: balance; }
+    .hero .sub { margin-top: 22px; font-size: clamp(17px, 2.2vw, 22px); color: rgba(246,242,234,.82); max-width: 44ch; line-height: 1.5; }
+    .hero-cta { margin-top: 38px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .hero-scroll { margin-top: 34px; display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 13.5px; letter-spacing: .04em; color: rgba(246,242,234,.7); }
+    .hero-scroll .dot { width: 22px; height: 34px; border: 1.5px solid rgba(246,242,234,.5); border-radius: 12px; position: relative; }
+    .hero-scroll .dot::after { content:""; position:absolute; left:50%; top:7px; width:3px; height:6px; border-radius:2px; background: rgba(246,242,234,.8); transform: translateX(-50%); animation: scrolldot 1.8s var(--ease-out) infinite; }
+    @keyframes scrolldot { 0%{opacity:0; transform:translate(-50%,0)} 30%{opacity:1} 70%{opacity:1} 100%{opacity:0; transform:translate(-50%,10px)} }
+
+    /* ---------- Stats (Lo que está en juego) ---------- */
+    .section-head { max-width: 44ch; }
+    .section-head h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.022em; line-height: 1.1; font-size: clamp(30px, 4.6vw, 52px); margin-top: 18px; text-wrap: balance; }
+    .stakes-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+    @media (max-width: 860px) { .stakes-grid { grid-template-columns: 1fr; } }
+    .stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-top: 30px; }
+    .stat-row.four { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 720px) { .stat-row.four { grid-template-columns: repeat(2, 1fr); } }
+    .stat { background: var(--surface); padding: 24px 22px; }
+    .stat .num { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; font-size: clamp(30px, 4vw, 40px); line-height: 1; color: var(--ink); }
+    .stat .num.crit { color: var(--crit); }
+    .stat .num.accent { color: var(--accent); }
+    .stat .lbl { margin-top: 10px; font-size: 13.5px; color: var(--ink-secondary); line-height: 1.4; }
+    .pullquote { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(22px, 3.2vw, 34px); line-height: 1.28; letter-spacing: -0.015em; color: var(--ink); max-width: 22ch; }
+
+    /* ---------- El hallazgo (STAR, dark) ---------- */
+    .dark-sec { background: #1b1a17; color: #f2eee6; position: relative; overflow: hidden; }
+    .dark-sec .eyebrow { color: #c9a17d; }
+    .dark-sec .eyebrow::before { background: #c9a17d; }
+    .hallazgo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+    @media (max-width: 860px) { .hallazgo-grid { grid-template-columns: 1fr; } }
+    .hallazgo h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 4.6vw, 52px); line-height: 1.1; letter-spacing: -0.022em; color: #f6f2ea; margin-top: 18px; }
+    .hallazgo p { color: rgba(246,242,234,.78); font-size: 17.5px; margin-top: 20px; max-width: 46ch; }
+    .hallazgo .kicker { font-family: var(--font-display); font-style: italic; color: #c9a17d; font-size: clamp(20px,2.6vw,26px); margin-top: 26px; line-height: 1.35; }
+    .media-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid rgba(242,238,230,.14); position: relative; aspect-ratio: 3/4; background:
+        radial-gradient(120% 90% at 60% 30%, #47513f, transparent 55%), linear-gradient(160deg,#2b3327,#151a13); }
+    .media-frame.wide { aspect-ratio: 16/9; }
+    .media-frame video, .media-frame img { width:100%; height:100%; object-fit: cover; }
+    .media-badge { position: absolute; top: 14px; left: 14px; z-index: 2; display:inline-flex; align-items:center; gap:7px; background: rgba(15,16,13,.6); backdrop-filter: blur(8px); color:#f2eee6; font-family: var(--font-display); font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:7px 12px; border-radius:999px; border:1px solid rgba(242,238,230,.2); }
+    .media-badge .rec { width:7px; height:7px; border-radius:50%; background:#e05a44; animation: blink 1.6s infinite; }
+    @keyframes blink { 50%{opacity:.3} }
+
+    /* ---------- No está solo (galería) ---------- */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+    @media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr; } .species .thumb { aspect-ratio: 16/10; } }
+    .species { border-radius: var(--radius-md); overflow: hidden; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+    .species:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .species .thumb { aspect-ratio: 1/1; position: relative; display:flex; align-items:center; justify-content:center; font-size: 40px; background: linear-gradient(160deg, #ede6d8, #e2dacb); overflow: hidden; }
+    .species .thumb video, .species .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; }
+    .species .thumb .tag { position:absolute; top:10px; left:10px; font-family: var(--font-display); font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color: var(--ink-tertiary); background: rgba(255,255,255,.7); padding:4px 8px; border-radius:999px; }
+    .species .meta { padding: 14px 16px 16px; }
+    .species .meta .n { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--ink); }
+    .species .meta .d { font-size: 12.5px; color: var(--ink-tertiary); margin-top: 4px; line-height: 1.4; }
+
+    /* ---------- Banda dron (plano grande) ---------- */
+    .drone-band { position: relative; min-height: 92svh; display: flex; align-items: flex-end; color: #f2eee6; overflow: hidden; padding: 0; }
+    .drone-media { position: absolute; inset: 0; z-index: 0; background: #151a13; }
+    .drone-media video { width: 100%; height: 100%; object-fit: cover; }
+    .drone-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,16,13,.88) 0%, rgba(15,16,13,.30) 45%, rgba(15,16,13,.12) 70%, rgba(15,16,13,.42) 100%); }
+    .drone-content { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(48px, 8vw, 96px); padding-top: 120px; }
+    .drone-content h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(30px, 5vw, 60px); max-width: 20ch; color: #f6f2ea; margin-top: 16px; text-wrap: balance; }
+    .drone-content p { margin-top: 18px; font-size: clamp(17px, 2.2vw, 21px); color: rgba(246,242,234,.82); max-width: 46ch; line-height: 1.5; }
+    .drone-tag { position: absolute; top: 90px; right: var(--pad); z-index: 2; display: inline-flex; align-items: center; gap: 7px; background: rgba(15,16,13,.55); backdrop-filter: blur(8px); color: #f2eee6; font-family: var(--font-display); font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 8px 13px; border-radius: 999px; border: 1px solid rgba(242,238,230,.22); }
+    .drone-tag .rec { width: 7px; height: 7px; border-radius: 50%; background: #7fa15a; }
+    @media (max-width: 640px) { .drone-tag { right: 50%; transform: translateX(50%); } }
+
+    /* ---------- La idea grande ---------- */
+    .big-idea { text-align: center; }
+    .big-idea .display { font-size: clamp(30px, 5vw, 60px); max-width: 20ch; margin: 18px auto 0; }
+    .big-idea .lead { margin: 26px auto 0; text-align: center; }
+    .poly-strip { margin-top: 44px; border-radius: var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow: var(--shadow-lg); aspect-ratio: 16/10; background:
+        linear-gradient(160deg,#2f3a2c,#1b201a); position: relative; display:flex; align-items:center; justify-content:center; }
+    .poly-strip img { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; }
+    .poly-cap { margin-top: 16px; font-size: 13.5px; color: var(--ink-secondary); text-align:center; max-width: 62ch; margin-left:auto; margin-right:auto; }
+    .poly-badge { position:absolute; bottom:16px; left:16px; background: rgba(15,16,13,.55); backdrop-filter: blur(8px); color:#f2eee6; font-family: var(--font-display); font-size:12px; font-weight:600; padding:8px 14px; border-radius:999px; border:1px solid rgba(242,238,230,.18); }
+    a.poly-strip { cursor: pointer; text-decoration: none; transition: box-shadow .25s var(--ease-out), transform .25s var(--ease-out); }
+    a.poly-strip:hover { transform: translateY(-3px); box-shadow: var(--shadow-xl); }
+    .map-cta { position:absolute; top:16px; right:16px; z-index:2; display:inline-flex; align-items:center; gap:6px; background: rgba(15,16,13,.6); backdrop-filter: blur(8px); color:#f2eee6; font-family: var(--font-display); font-size:12px; font-weight:600; padding:8px 13px; border-radius:999px; border:1px solid rgba(242,238,230,.28); transition: background .2s var(--ease-out), border-color .2s var(--ease-out); }
+    a.poly-strip:hover .map-cta { background: var(--accent); border-color: var(--accent); }
+
+    /* ---------- Por qué (3 cards) ---------- */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    @media (max-width: 860px) { .cards-3 { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px 28px; box-shadow: var(--shadow); transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .card .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display:flex; align-items:center; justify-content:center; font-size: 22px; margin-bottom: 18px; }
+    .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+    .card p { margin-top: 10px; font-size: 15px; color: var(--ink-secondary); line-height: 1.55; }
+
+    /* ---------- Flywheel ---------- */
+    .flywheel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; counter-reset: step; }
+    @media (max-width: 860px) { .flywheel { grid-template-columns: 1fr; } }
+    .step { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; box-shadow: var(--shadow); }
+    .step .n { counter-increment: step; font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--accent); display:inline-flex; align-items:center; justify-content:center; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--accent); margin-bottom: 16px; }
+    .step .n::before { content: counter(step); }
+    .step h4 { font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+    .step p { margin-top: 10px; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; }
+    .step .arrow { position:absolute; right: -13px; top: 50%; transform: translateY(-50%); z-index: 2; color: var(--accent); font-size: 20px; background: var(--bg); border-radius: 50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; }
+    @media (max-width: 860px) { .step .arrow { right: 50%; top: auto; bottom: -13px; transform: translateX(50%) rotate(90deg); } }
+
+    /* ---------- Evidencia ---------- */
+    .evidence-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 60px); align-items: center; }
+    @media (max-width: 860px) { .evidence-grid { grid-template-columns: 1fr; } }
+    .ev-list { list-style: none; margin-top: 28px; display: grid; gap: 2px; }
+    .ev-list li { display: flex; gap: 16px; align-items: flex-start; padding: 18px 4px; border-bottom: 1px solid var(--separator); }
+    .ev-list li:last-child { border-bottom: none; }
+    .ev-list .ei { font-size: 22px; line-height: 1.2; width: 30px; flex-shrink: 0; }
+    .ev-list .et { font-family: var(--font-display); font-weight: 600; font-size: 16px; }
+    .ev-list .ed { font-size: 13.5px; color: var(--ink-secondary); margin-top: 2px; }
+
+    /* ---------- La decisión (cierre, full dark) ---------- */
+    .decision { position: relative; min-height: 88svh; display: flex; align-items: center; color: #f2eee6; overflow: hidden; }
+    .decision-media { position: absolute; inset: 0; z-index: 0; background:
+        radial-gradient(120% 90% at 30% 30%, #47513f, transparent 55%), linear-gradient(160deg,#232a1f,#111309); }
+    .decision-media img, .decision-media video { width:100%; height:100%; object-fit: cover; }
+    .decision-scrim { position:absolute; inset:0; z-index:1; background: linear-gradient(120deg, rgba(15,16,13,.9) 0%, rgba(15,16,13,.55) 60%, rgba(15,16,13,.3) 100%); }
+    .decision-content { position: relative; z-index: 2; }
+    .decision h2 { font-family: var(--font-display); font-weight: 400; letter-spacing:-0.025em; line-height: 1.1; font-size: clamp(32px, 5.4vw, 66px); max-width: 18ch; color:#f6f2ea; text-wrap: balance; }
+    .decision p { margin-top: 22px; font-size: clamp(17px,2.2vw,21px); color: rgba(246,242,234,.82); max-width: 48ch; }
+    .decision .em { font-family: var(--font-display); font-style: italic; color: #d6b28f; }
+    .decision-cta { margin-top: 40px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+    .decision .note { margin-top: 26px; font-size: 13.5px; color: rgba(246,242,234,.6); max-width: 40ch; }
+
+    /* ---------- Contacto ---------- */
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px,5vw,64px); }
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info .display { font-size: clamp(28px,4vw,44px); }
+    .contact-info .lead { margin-top: 18px; }
+    .contact-meta { margin-top: 30px; display: grid; gap: 14px; }
+    .contact-meta .row { display:flex; gap:12px; align-items:flex-start; font-size: 15px; color: var(--ink-secondary); }
+    .contact-meta .row .k { color: var(--ink); font-family: var(--font-display); font-weight: 600; min-width: 92px; }
+    form.lead-form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(24px,4vw,36px); box-shadow: var(--shadow-lg); }
+    .field { margin-bottom: 18px; }
+    .field label { display:block; font-family: var(--font-display); font-weight: 600; font-size: 13.5px; margin-bottom: 8px; color: var(--ink); }
+    .field input, .field textarea {
+      width: 100%; font-family: var(--font-sans); font-size: 15px; color: var(--ink);
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 13px 15px; transition: border-color .2s, box-shadow .2s; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+    form.lead-form .btn-primary { width: 100%; justify-content: center; margin-top: 6px; }
+    .form-fine { margin-top: 14px; font-size: 12px; color: var(--ink-tertiary); text-align:center; }
+
+    /* ---------- Footer ---------- */
+    footer.site { background: var(--bg-grouped); border-top: 1px solid var(--border); padding: 48px 0 40px; }
+    footer.site .wrap { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+    footer.site .brand { color: var(--ink); }
+    footer.site .fmeta { font-size: 13px; color: var(--ink-tertiary); text-align: right; line-height: 1.6; }
+    @media (max-width: 620px){ footer.site .fmeta { text-align:left; } }
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-scroll .dot::after{ animation:none } }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Reserva San Juan de Frías, sección El Paují">
+        <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M34 88 C14 80 16 40 44 34 C48 14 72 16 60 38 C70 42 74 50 74 56 L90 60 L73 66" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="name">Reserva San Juan de Frías<small data-i18n="nav.brandSub">sección El Paují · Magdalena Medio</small></span>
+      </a>
+      <nav class="nav-links">
+        <a class="link" href="#juego" data-i18n="nav.species">La especie</a>
+        <a class="link" href="#hallazgo" data-i18n="nav.discovery">El hallazgo</a>
+        <a class="link" href="#modelo" data-i18n="nav.model">El modelo</a>
+        <a class="link" href="#evidencia" data-i18n="nav.evidence">Evidencia</a>
+        <button class="lang-toggle" id="langBtn" type="button" aria-label="Switch to English">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel">EN</span>
+        </button>
+        <a class="btn btn-primary" href="#contacto"><span data-i18n="nav.cta">Conversemos</span> <span class="btn-arrow">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero-media" id="heroMedia">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+        <source src="assets/hallazgo-pauji.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <div class="wrap">
+        <h1 data-i18n="hero.h1">El ave más amenazada de Colombia todavía vive aquí.</h1>
+        <p class="sub" data-i18n="hero.sub">La pregunta es por cuánto tiempo — y quién decidirá el desenlace.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#juego"><span data-i18n="hero.cta1">Conozca la Reserva</span> <span class="btn-arrow">→</span></a>
+          <a class="btn btn-light" href="#evidencia" data-i18n="hero.cta2">Ver la evidencia de campo ↓</a>
+        </div>
+        <div class="hero-scroll" aria-hidden="true"><span class="dot"></span> <span data-i18n="hero.scroll">Desplácese</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 · LO QUE ESTÁ EN JUEGO ===================== -->
+  <section id="juego">
+    <div class="wrap">
+      <div class="reveal" style="max-width:60ch;">
+        <span class="eyebrow" data-i18n="stakes.eyebrow">Lo que está en juego</span>
+        <h2 class="section-head" style="margin-top:14px; max-width:none;" data-i18n="stakes.h2">En 25 años, el paují de pico azul perdió el <span class="accent-italic">92,8%</span> de su hábitat.</h2>
+      </div>
+      <p class="lead reveal" style="margin-top:22px;" data-i18n="stakes.lead">
+        El <strong>paují de pico azul</strong> <em>(Crax alberti)</em> es endémico de Colombia —no existe en ningún otro lugar del planeta—. Hoy está clasificado <strong>En Peligro Crítico</strong> por la UICN: la última categoría antes de "Extinto en Estado Silvestre". Cada año que pasa, su mundo se hace más pequeño.
+      </p>
+      <div class="stat-row four reveal">
+        <div class="stat"><div class="num crit" data-i18n="stakes.s1n">92,8%</div><div class="lbl" data-i18n="stakes.s1l">del hábitat perdido en 25 años</div></div>
+        <div class="stat"><div class="num" data-i18n="stakes.s2n">12.003 → 1.150</div><div class="lbl" data-i18n="stakes.s2l">km² de hábitat restante</div></div>
+        <div class="stat"><div class="num accent" data-i18n="stakes.s3n">~1.085</div><div class="lbl" data-i18n="stakes.s3l">individuos adultos en el planeta</div></div>
+        <div class="stat"><div class="num crit" data-i18n="stakes.s4n">CR</div><div class="lbl" data-i18n="stakes.s4l">En Peligro Crítico — UICN</div></div>
+      </div>
+      <p class="pullquote reveal" style="margin:40px auto 0; text-align:center; max-width:26ch;" data-i18n="stakes.pull">"Casi nadie volverá a ver uno vivo."</p>
+    </div>
+  </section>
+
+  <!-- ===================== 3 · EL HALLAZGO ===================== -->
+  <section class="dark-sec hallazgo" id="hallazgo">
+    <div class="wrap">
+      <div class="hallazgo-grid">
+        <div>
+          <span class="eyebrow reveal" data-i18n="disc.eyebrow">El hallazgo</span>
+          <h2 class="reveal" data-i18n="disc.h2">Entonces, una noche, nuestra cámara trampa se activó.</h2>
+          <p class="reveal" data-i18n="disc.p1">Y ahí estaba. Un paují de pico azul, <strong>vivo, en su territorio</strong>, dentro de 218 hectáreas de bosque húmedo tropical continuo, en pleno Magdalena Medio santandereano.</p>
+          <p class="reveal" data-i18n="disc.p2">No es un fósil. No es un archivo. Es una población que respira, se alimenta y —si el bosque permanece— se reproduce.</p>
+          <p class="kicker reveal" data-i18n="disc.kicker">Este bosque no es "tierra con potencial". Es uno de los últimos refugios reales de una especie que el mundo está a punto de perder.</p>
+        </div>
+        <div class="media-frame wide reveal">
+          <span class="media-badge"><span class="rec"></span> <span data-i18n="badge.cam">Cámara trampa</span></span>
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/hallazgo-poster.jpg">
+            <source src="assets/hallazgo-pauji.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 · NO ESTÁ SOLO ===================== -->
+  <section id="biodiversidad">
+    <div class="wrap">
+      <div class="reveal" style="max-width:52ch;">
+        <span class="eyebrow" data-i18n="bio.eyebrow">No está solo</span>
+        <h2 class="section-head" style="margin-top:14px;" data-i18n="bio.h2">El paují es un <span class="accent-italic">indicador</span>: solo aparece donde el bosque está sano.</h2>
+        <p class="lead" style="margin-top:20px;" data-i18n="bio.lead">Y donde él vive, vive todo lo demás. Nuestras cámaras han registrado cajuches, tigrillos y monos —y el bosque es además territorio de <strong>jaguar</strong> y de una diversidad inusual de <strong>aves y anfibios</strong>, señal de agua limpia y microclima estable:</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="species reveal">
+          <div class="thumb"><span class="tag" style="background:rgba(15,16,13,.5);color:#e2dacb;z-index:2;" data-i18n="badge.cam">Cámara trampa</span>
+            <video autoplay muted loop playsinline preload="metadata"><source src="assets/cajuches.mp4" type="video/mp4" /></video>
+          </div>
+          <div class="meta"><div class="n" data-i18n="sp.cajuches.n">Cajuches</div><div class="d" data-i18n="sp.cajuches.d">Pecarí de labio blanco — sensible a la fragmentación del bosque.</div></div>
+        </div>
+        <div class="species reveal">
+          <div class="thumb"><span class="tag" style="background:rgba(15,16,13,.5);color:#e2dacb;z-index:2;" data-i18n="badge.cam">Cámara trampa</span>
+            <img src="assets/tigrillos.jpg" alt="Tigrillo registrado en la reserva" loading="lazy" />
+          </div>
+          <div class="meta"><div class="n" data-i18n="sp.tigrillos.n">Tigrillos</div><div class="d" data-i18n="sp.tigrillos.d">Felinos menores, indicadores de un sotobosque intacto.</div></div>
+        </div>
+        <div class="species reveal">
+          <div class="thumb"><span class="tag" style="background:rgba(15,16,13,.5);color:#e2dacb;z-index:2;" data-i18n="badge.cam">Cámara trampa</span>
+            <video autoplay muted loop playsinline preload="metadata"><source src="assets/monos.mp4" type="video/mp4" /></video>
+          </div>
+          <div class="meta"><div class="n" data-i18n="sp.monos.n">Monos</div><div class="d" data-i18n="sp.monos.d">Dispersores de semillas — regeneran el bosque desde dentro.</div></div>
+        </div>
+      </div>
+      <p class="pullquote reveal" style="margin:44px auto 0; text-align:center; max-width:30ch;" data-i18n="bio.pull">Un bosque con jaguar y paují no es un remanente. Es un <span class="accent-italic">ecosistema funcional</span> — y esos ya casi no quedan.</p>
+    </div>
+  </section>
+
+  <!-- ===================== BANDA DRON · PLANO GRANDE ===================== -->
+  <section class="drone-band" id="territorio">
+    <div class="drone-media">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/dron-poster.jpg">
+        <source src="assets/dron-bosque.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="drone-scrim"></div>
+    <span class="drone-tag"><span class="rec"></span> <span data-i18n="drone.badge">Vuelo de dron · la reserva</span></span>
+    <div class="drone-content">
+      <div class="wrap">
+        <span class="eyebrow reveal" style="color:#d6b28f;" data-i18n="drone.eyebrow">Territorio de jaguar y tigrillo</span>
+        <h2 class="reveal" data-i18n="drone.h2">218 hectáreas de bosque húmedo tropical, continuo e intacto.</h2>
+        <p class="reveal" data-i18n="drone.p">Visto desde el aire: la magnitud de un refugio que todavía respira completo — el mismo bosque donde caminan el jaguar, el tigrillo y el paují.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 · LA IDEA GRANDE ===================== -->
+  <section class="big-idea" style="background:var(--bg-grouped);">
+    <div class="wrap">
+      <span class="eyebrow reveal" data-i18n="idea.eyebrow">La idea grande</span>
+      <p class="display reveal" data-i18n="idea.display">Quedan cerca de 1.085 paujíes en el planeta. <span class="accent-italic">Algunos viven en estas 218 hectáreas.</span></p>
+      <p class="lead reveal" data-i18n="idea.lead">No le ofrecemos un lote. Le ofrecemos la <strong>custodia de un refugio</strong> — protegido, georreferenciado, monitoreado y listo para convertirse en un activo de conservación permanente y medible.</p>
+      <a class="poly-strip reveal" href="https://www.google.com/maps?q=6.375744,-74.183147" target="_blank" rel="noopener" aria-label="Ver la ubicación de la reserva en Google Maps">
+        <img src="assets/poligono-218ha.jpg" alt="Polígono del bosque de 218 ha (2.187.380 m²) dentro de la Hacienda San Juan de Frías, sobre imagen satelital" />
+        <span class="map-cta" data-i18n="idea.mapcta">📍 Ver en Google Maps ↗</span>
+        <span class="poly-badge" data-i18n="idea.polybadge">218 ha · 2.187.380 m² · bosque continuo</span>
+      </a>
+      <p class="poly-cap reveal" data-i18n="idea.polycap">Sección El Paují — el polígono verde superior de la Hacienda San Juan de Frías (Finca Las Frías, Cimitarra), 218 hectáreas de bosque continuo. Coordenadas: 6°22′33″N 74°11′00″W.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 6 · POR QUÉ ESTA RESERVA, Y POR QUÉ AHORA ===================== -->
+  <section id="porque">
+    <div class="wrap">
+      <div class="reveal" style="max-width:46ch;">
+        <span class="eyebrow" data-i18n="why.eyebrow">Por qué esta reserva, y por qué ahora</span>
+        <h2 class="section-head" style="margin-top:14px;" data-i18n="why.h2">El caso <span class="accent-italic">racional</span> — no solo el emocional.</h2>
+      </div>
+      <div class="cards-3">
+        <div class="card reveal">
+          <div class="ico">🎯</div>
+          <h3 data-i18n="why.c1h">Impacto defendible</h3>
+          <p data-i18n="why.c1p">No es conservación genérica. Es una especie endémica, En Peligro Crítico, con nombre y rostro. El tipo de historia que un fondo puede llevar a sus propios donantes e inversionistas.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🧭</div>
+          <h3 data-i18n="why.c2h">Ubicación estratégica</h3>
+          <p data-i18n="why.c2p">Magdalena Medio — el mismo corredor biológico donde ProAves y American Bird Conservancy establecieron la única otra reserva del paují. Proteger este polígono <strong>conecta y amplía</strong> el hábitat existente, no lo duplica.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">📊</div>
+          <h3 data-i18n="why.c3h">Activo estructurable</h3>
+          <p data-i18n="why.c3p">218 ha de bosque continuo, polígono georreferenciado y línea base biológica ya iniciada. Base lista para servidumbre ecológica, bonos de carbono, REDD+ o adquisición directa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7 · EL MODELO (FLYWHEEL) ===================== -->
+  <section class="dark-sec" id="modelo">
+    <div class="wrap">
+      <div class="reveal" style="max-width:52ch;">
+        <span class="eyebrow" data-i18n="model.eyebrow">El modelo que lo hace distinto</span>
+        <h2 class="hallazgo" style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,4.6vw,52px);line-height:1.1;letter-spacing:-0.022em;color:#f6f2ea;margin-top:14px;" data-i18n="model.h2">La mayoría de los bosques desaparecen porque valen más talados que en pie. <span style="font-style:italic;color:#c9a17d;">Nosotros invertimos esa ecuación.</span></h2>
+      </div>
+      <div class="flywheel">
+        <div class="step reveal">
+          <div class="n"></div>
+          <h4 data-i18n="model.s1h">Usted protege el bosque</h4>
+          <p data-i18n="model.s1p">218 ha de refugio del paují quedan aseguradas para siempre.</p>
+          <span class="arrow">→</span>
+        </div>
+        <div class="step reveal">
+          <div class="n"></div>
+          <h4 data-i18n="model.s2h">La familia reinvierte</h4>
+          <p data-i18n="model.s2p">Los recursos financian la conversión de las tierras vecinas a <strong>ganadería regenerativa</strong>.</p>
+          <span class="arrow">→</span>
+        </div>
+        <div class="step reveal">
+          <div class="n"></div>
+          <h4 data-i18n="model.s3h">El resultado</h4>
+          <p data-i18n="model.s3p">Producción que restaura suelo y agua en lugar de expandirse sobre el bosque. La reserva gana una <strong>zona de amortiguación aliada</strong>.</p>
+        </div>
+      </div>
+      <p class="kicker reveal" style="color:#d6b28f;font-family:var(--font-display);font-style:italic;font-size:clamp(19px,2.4vw,25px);margin-top:40px;max-width:40ch;line-height:1.4;" data-i18n="model.kicker">Conservar y producir dejan de ser enemigos — y usted es quien lo hace posible.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 8 · LA EVIDENCIA ===================== -->
+  <section id="evidencia" style="background:var(--bg-grouped);">
+    <div class="wrap">
+      <div class="evidence-grid">
+        <div>
+          <span class="eyebrow reveal" data-i18n="ev.eyebrow">La evidencia</span>
+          <h2 class="section-head reveal" style="margin-top:14px;" data-i18n="ev.h2">Dato <span class="accent-italic">y</span> emoción. Todo verificable.</h2>
+          <p class="lead reveal" style="margin-top:18px;" data-i18n="ev.lead">No le pedimos que confíe en una promesa. Ponemos a su disposición el material de campo y el dossier técnico completo.</p>
+          <a class="btn btn-primary reveal" href="#contacto" style="margin-top:28px;"><span data-i18n="ev.cta">Solicitar acceso al data room</span> <span class="btn-arrow">→</span></a>
+        </div>
+        <ul class="ev-list reveal">
+          <li><span class="ei">▶️</span><div><div class="et" data-i18n="ev.i1t">Video de la reserva</div><div class="ed" data-i18n="ev.i1d">Recorrido aéreo + campo</div></div></li>
+          <li><span class="ei">📸</span><div><div class="et" data-i18n="ev.i2t">Archivo de cámaras trampa</div><div class="ed" data-i18n="ev.i2d">Paují, jaguar, cajuches, tigrillos</div></div></li>
+          <li><span class="ei">🗺️</span><div><div class="et" data-i18n="ev.i3t">Polígono georreferenciado</div><div class="ed" data-i18n="ev.i3d">Las 218 ha, con coordenadas</div></div></li>
+          <li><span class="ei">📄</span><div><div class="et" data-i18n="ev.i4t">Dossier técnico</div><div class="ed" data-i18n="ev.i4d">Ubicación, zona de vida (bh-T), régimen hídrico, línea base de biodiversidad</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9 · LA DECISIÓN ===================== -->
+  <section class="decision" id="decision">
+    <div class="decision-media" id="decisionMedia">
+      <!-- Reemplaza por la mejor imagen del paují a pantalla completa: <img src="assets/pauji-hero.jpg" alt="Paují de pico azul" /> -->
+    </div>
+    <div class="decision-scrim"></div>
+    <div class="decision-content">
+      <div class="wrap">
+        <span class="eyebrow reveal" style="color:#d6b28f;" data-i18n="dec.eyebrow">La decisión</span>
+        <h2 class="reveal" style="margin-top:14px;" data-i18n="dec.h2">Dentro de veinte años, este bosque será una de dos cosas.</h2>
+        <p class="reveal" data-i18n="dec.p">Un potrero más — indistinguible, silencioso, con una especie menos en el mundo. O <span class="em">un refugio con nombre propio</span>, donde el paují de pico azul siga caminando entre los árboles porque alguien, hoy, decidió que valía la pena.</p>
+        <p class="reveal" style="font-family:var(--font-display);font-size:clamp(20px,2.6vw,28px);color:#f6f2ea;margin-top:20px;" data-i18n="dec.line">Esa persona puede ser usted.</p>
+        <div class="decision-cta reveal">
+          <a class="btn btn-primary" href="#contacto"><span data-i18n="dec.cta1">Conversemos sobre la adquisición</span> <span class="btn-arrow">→</span></a>
+          <a class="btn btn-light" href="#contacto" data-i18n="dec.cta2">Agende una visita a la Reserva</a>
+        </div>
+        <p class="note reveal" data-i18n="dec.note">Respondemos a fondos de conservación, inversionistas de impacto y organizaciones ambientales en menos de 48 horas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10 · CONTACTO ===================== -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow reveal" data-i18n="con.eyebrow">Contacto</span>
+          <p class="display reveal" data-i18n="con.display">Hablemos de <span class="accent-italic">custodiar</span> un refugio.</p>
+          <p class="lead reveal" data-i18n="con.lead">Cuéntenos quién es y qué le interesa. Le enviaremos el data room y coordinaremos una conversación.</p>
+          <div class="contact-meta reveal">
+            <div class="row"><span class="k" data-i18n="con.locK">Ubicación</span><span>Hacienda San Juan de Frías · Cimitarra, Santander · Magdalena Medio, Colombia</span></div>
+            <div class="row"><span class="k" data-i18n="con.emailK">Correo</span><span><a href="mailto:juan.francisco.chica@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">juan.francisco.chica@gmail.com</a></span></div>
+            <div class="row"><span class="k">WhatsApp</span><span><a href="https://wa.me/573234832669" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">+57 323 483 2669</a></span></div>
+            <div class="row"><span class="k" data-i18n="con.respK">Responsable</span><span>Juan Francisco Chica</span></div>
+          </div>
+        </div>
+        <!-- Formulario: por defecto abre el cliente de correo (mailto). Para recibir
+             los envíos en un panel, conecta un servicio como Formspree cambiando
+             el action por tu endpoint (p. ej. action="https://formspree.io/f/XXXX" method="POST"). -->
+        <form class="lead-form reveal" action="mailto:juan.francisco.chica@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="field"><label for="nombre" data-i18n="form.name">Nombre</label><input id="nombre" name="Nombre" type="text" required placeholder="Su nombre" data-i18n-ph="ph.name" /></div>
+            <div class="field"><label for="org" data-i18n="form.org">Organización</label><input id="org" name="Organización" type="text" placeholder="Fondo / empresa" data-i18n-ph="ph.org" /></div>
+          </div>
+          <div class="field"><label for="correo" data-i18n="form.email">Correo</label><input id="correo" name="Correo" type="email" required placeholder="nombre@organizacion.com" data-i18n-ph="ph.email" /></div>
+          <div class="field"><label for="mensaje" data-i18n="form.msg">Mensaje</label><textarea id="mensaje" name="Mensaje" placeholder="Cuéntenos su interés en la Reserva…" data-i18n-ph="ph.msg"></textarea></div>
+          <button class="btn btn-primary" type="submit"><span data-i18n="form.submit">Enviar y solicitar el data room</span> <span class="btn-arrow">→</span></button>
+          <p class="form-fine" data-i18n="form.fine">Respondemos en menos de 48 horas. Sus datos se usan solo para esta conversación.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M34 88 C14 80 16 40 44 34 C48 14 72 16 60 38 C70 42 74 50 74 56 L90 60 L73 66" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="name">Reserva San Juan de Frías<small data-i18n="nav.brandSub">sección El Paují · Magdalena Medio</small></span>
+      </a>
+      <div class="fmeta">
+        Hacienda San Juan de Frías · Cimitarra, Santander · Colombia<br/>
+        <span data-i18n="foot.line2">Un proyecto de conservación medible</span> · <span id="year"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- i18n ----------
+    const I18N = {
+      es: {
+        'meta.title': 'Reserva San Juan de Frías · Sección El Paují · Un refugio del ave más amenazada de Colombia',
+        'meta.desc': '218 hectáreas de bosque húmedo tropical en el Magdalena Medio — uno de los últimos refugios del paují de pico azul (Crax alberti), En Peligro Crítico. Una oportunidad de conservación medible.',
+        'nav.brandSub': 'sección El Paují · Magdalena Medio',
+        'nav.species': 'La especie', 'nav.discovery': 'El hallazgo', 'nav.model': 'El modelo', 'nav.evidence': 'Evidencia', 'nav.cta': 'Conversemos',
+        'hero.h1': 'El ave más amenazada de Colombia todavía vive aquí.',
+        'hero.sub': 'La pregunta es por cuánto tiempo — y quién decidirá el desenlace.',
+        'hero.cta1': 'Conozca la Reserva', 'hero.cta2': 'Ver la evidencia de campo ↓', 'hero.scroll': 'Desplácese',
+        'stakes.eyebrow': 'Lo que está en juego',
+        'stakes.h2': 'En 25 años, el paují de pico azul perdió el <span class="accent-italic">92,8%</span> de su hábitat.',
+        'stakes.lead': 'El <strong>paují de pico azul</strong> <em>(Crax alberti)</em> es endémico de Colombia —no existe en ningún otro lugar del planeta—. Hoy está clasificado <strong>En Peligro Crítico</strong> por la UICN: la última categoría antes de "Extinto en Estado Silvestre". Cada año que pasa, su mundo se hace más pequeño.',
+        'stakes.s1n': '92,8%', 'stakes.s1l': 'del hábitat perdido en 25 años',
+        'stakes.s2n': '12.003 → 1.150', 'stakes.s2l': 'km² de hábitat restante',
+        'stakes.s3n': '~1.085', 'stakes.s3l': 'individuos adultos en el planeta',
+        'stakes.s4n': 'CR', 'stakes.s4l': 'En Peligro Crítico — UICN',
+        'stakes.pull': '"Casi nadie volverá a ver uno vivo."',
+        'disc.eyebrow': 'El hallazgo',
+        'disc.h2': 'Entonces, una noche, nuestra cámara trampa se activó.',
+        'disc.p1': 'Y ahí estaba. Un paují de pico azul, <strong>vivo, en su territorio</strong>, dentro de 218 hectáreas de bosque húmedo tropical continuo, en pleno Magdalena Medio santandereano.',
+        'disc.p2': 'No es un fósil. No es un archivo. Es una población que respira, se alimenta y —si el bosque permanece— se reproduce.',
+        'disc.kicker': 'Este bosque no es "tierra con potencial". Es uno de los últimos refugios reales de una especie que el mundo está a punto de perder.',
+        'badge.cam': 'Cámara trampa',
+        'bio.eyebrow': 'No está solo',
+        'bio.h2': 'El paují es un <span class="accent-italic">indicador</span>: solo aparece donde el bosque está sano.',
+        'bio.lead': 'Y donde él vive, vive todo lo demás. Nuestras cámaras han registrado cajuches, tigrillos y monos —y el bosque es además territorio de <strong>jaguar</strong> y de una diversidad inusual de <strong>aves y anfibios</strong>, señal de agua limpia y microclima estable:',
+        'sp.cajuches.n': 'Cajuches', 'sp.cajuches.d': 'Pecarí de labio blanco — sensible a la fragmentación del bosque.',
+        'sp.tigrillos.n': 'Tigrillos', 'sp.tigrillos.d': 'Felinos menores, indicadores de un sotobosque intacto.',
+        'sp.monos.n': 'Monos', 'sp.monos.d': 'Dispersores de semillas — regeneran el bosque desde dentro.',
+        'bio.pull': 'Un bosque con jaguar y paují no es un remanente. Es un <span class="accent-italic">ecosistema funcional</span> — y esos ya casi no quedan.',
+        'drone.badge': 'Vuelo de dron · la reserva',
+        'drone.eyebrow': 'Territorio de jaguar y tigrillo',
+        'drone.h2': '218 hectáreas de bosque húmedo tropical, continuo e intacto.',
+        'drone.p': 'Visto desde el aire: la magnitud de un refugio que todavía respira completo — el mismo bosque donde caminan el jaguar, el tigrillo y el paují.',
+        'idea.eyebrow': 'La idea grande',
+        'idea.display': 'Quedan cerca de 1.085 paujíes en el planeta. <span class="accent-italic">Algunos viven en estas 218 hectáreas.</span>',
+        'idea.lead': 'No le ofrecemos un lote. Le ofrecemos la <strong>custodia de un refugio</strong> — protegido, georreferenciado, monitoreado y listo para convertirse en un activo de conservación permanente y medible.',
+        'idea.polybadge': '218 ha · 2.187.380 m² · bosque continuo',
+        'idea.mapcta': '📍 Ver en Google Maps ↗',
+        'idea.polycap': 'Sección El Paují — el polígono verde superior de la Hacienda San Juan de Frías (Finca Las Frías, Cimitarra), 218 hectáreas de bosque continuo. Coordenadas: 6°22′33″N 74°11′00″W.',
+        'why.eyebrow': 'Por qué esta reserva, y por qué ahora',
+        'why.h2': 'El caso <span class="accent-italic">racional</span> — no solo el emocional.',
+        'why.c1h': 'Impacto defendible', 'why.c1p': 'No es conservación genérica. Es una especie endémica, En Peligro Crítico, con nombre y rostro. El tipo de historia que un fondo puede llevar a sus propios donantes e inversionistas.',
+        'why.c2h': 'Ubicación estratégica', 'why.c2p': 'Magdalena Medio — el mismo corredor biológico donde ProAves y American Bird Conservancy establecieron la única otra reserva del paují. Proteger este polígono <strong>conecta y amplía</strong> el hábitat existente, no lo duplica.',
+        'why.c3h': 'Activo estructurable', 'why.c3p': '218 ha de bosque continuo, polígono georreferenciado y línea base biológica ya iniciada. Base lista para servidumbre ecológica, bonos de carbono, REDD+ o adquisición directa.',
+        'model.eyebrow': 'El modelo que lo hace distinto',
+        'model.h2': 'La mayoría de los bosques desaparecen porque valen más talados que en pie. <span style="font-style:italic;color:#c9a17d;">Nosotros invertimos esa ecuación.</span>',
+        'model.s1h': 'Usted protege el bosque', 'model.s1p': '218 ha de refugio del paují quedan aseguradas para siempre.',
+        'model.s2h': 'La familia reinvierte', 'model.s2p': 'Los recursos financian la conversión de las tierras vecinas a <strong>ganadería regenerativa</strong>.',
+        'model.s3h': 'El resultado', 'model.s3p': 'Producción que restaura suelo y agua en lugar de expandirse sobre el bosque. La reserva gana una <strong>zona de amortiguación aliada</strong>.',
+        'model.kicker': 'Conservar y producir dejan de ser enemigos — y usted es quien lo hace posible.',
+        'ev.eyebrow': 'La evidencia',
+        'ev.h2': 'Dato <span class="accent-italic">y</span> emoción. Todo verificable.',
+        'ev.lead': 'No le pedimos que confíe en una promesa. Ponemos a su disposición el material de campo y el dossier técnico completo.',
+        'ev.cta': 'Solicitar acceso al data room',
+        'ev.i1t': 'Video de la reserva', 'ev.i1d': 'Recorrido aéreo + campo',
+        'ev.i2t': 'Archivo de cámaras trampa', 'ev.i2d': 'Paují, jaguar, cajuches, tigrillos',
+        'ev.i3t': 'Polígono georreferenciado', 'ev.i3d': 'Las 218 ha, con coordenadas',
+        'ev.i4t': 'Dossier técnico', 'ev.i4d': 'Ubicación, zona de vida (bh-T), régimen hídrico, línea base de biodiversidad',
+        'dec.eyebrow': 'La decisión',
+        'dec.h2': 'Dentro de veinte años, este bosque será una de dos cosas.',
+        'dec.p': 'Un potrero más — indistinguible, silencioso, con una especie menos en el mundo. O <span class="em">un refugio con nombre propio</span>, donde el paují de pico azul siga caminando entre los árboles porque alguien, hoy, decidió que valía la pena.',
+        'dec.line': 'Esa persona puede ser usted.',
+        'dec.cta1': 'Conversemos sobre la adquisición', 'dec.cta2': 'Agende una visita a la Reserva',
+        'dec.note': 'Respondemos a fondos de conservación, inversionistas de impacto y organizaciones ambientales en menos de 48 horas.',
+        'con.eyebrow': 'Contacto',
+        'con.display': 'Hablemos de <span class="accent-italic">custodiar</span> un refugio.',
+        'con.lead': 'Cuéntenos quién es y qué le interesa. Le enviaremos el data room y coordinaremos una conversación.',
+        'con.locK': 'Ubicación', 'con.emailK': 'Correo', 'con.respK': 'Responsable',
+        'form.name': 'Nombre', 'form.org': 'Organización', 'form.email': 'Correo', 'form.msg': 'Mensaje',
+        'ph.name': 'Su nombre', 'ph.org': 'Fondo / empresa', 'ph.email': 'nombre@organizacion.com', 'ph.msg': 'Cuéntenos su interés en la Reserva…',
+        'form.submit': 'Enviar y solicitar el data room',
+        'form.fine': 'Respondemos en menos de 48 horas. Sus datos se usan solo para esta conversación.',
+        'foot.line2': 'Un proyecto de conservación medible'
+      },
+      en: {
+        'meta.title': 'Reserva San Juan de Frías · El Paují Section · A refuge for Colombia’s most endangered bird',
+        'meta.desc': '218 hectares of tropical rainforest in the Magdalena Medio — one of the last refuges of the blue-billed curassow (Crax alberti), Critically Endangered. A measurable conservation opportunity.',
+        'nav.brandSub': 'El Paují section · Magdalena Medio',
+        'nav.species': 'The species', 'nav.discovery': 'The discovery', 'nav.model': 'The model', 'nav.evidence': 'Evidence', 'nav.cta': 'Let’s talk',
+        'hero.h1': 'Colombia’s most endangered bird still lives here.',
+        'hero.sub': 'The question is for how long — and who will decide the outcome.',
+        'hero.cta1': 'Discover the Reserve', 'hero.cta2': 'See the field evidence ↓', 'hero.scroll': 'Scroll',
+        'stakes.eyebrow': 'What’s at stake',
+        'stakes.h2': 'In 25 years, the blue-billed curassow lost <span class="accent-italic">92.8%</span> of its habitat.',
+        'stakes.lead': 'The <strong>blue-billed curassow</strong> <em>(Crax alberti)</em> is endemic to Colombia —it exists nowhere else on Earth—. Today it is classified <strong>Critically Endangered</strong> by the IUCN: the last category before "Extinct in the Wild." Every year that passes, its world grows smaller.',
+        'stakes.s1n': '92.8%', 'stakes.s1l': 'of its habitat lost in 25 years',
+        'stakes.s2n': '12,003 → 1,150', 'stakes.s2l': 'km² of habitat remaining',
+        'stakes.s3n': '~1,085', 'stakes.s3l': 'adult individuals on the planet',
+        'stakes.s4n': 'CR', 'stakes.s4l': 'Critically Endangered — IUCN',
+        'stakes.pull': '"Almost no one will ever see one alive."',
+        'disc.eyebrow': 'The discovery',
+        'disc.h2': 'Then, one night, our camera trap triggered.',
+        'disc.p1': 'And there it was. A blue-billed curassow, <strong>alive, in its territory</strong>, within 218 hectares of continuous tropical rainforest, deep in the Magdalena Medio of Santander.',
+        'disc.p2': 'It’s not a fossil. It’s not an archive. It’s a population that breathes, feeds and —if the forest remains— breeds.',
+        'disc.kicker': 'This forest isn’t "land with potential." It’s one of the last real refuges of a species the world is about to lose.',
+        'badge.cam': 'Camera trap',
+        'bio.eyebrow': 'It’s not alone',
+        'bio.h2': 'The curassow is an <span class="accent-italic">indicator</span>: it only appears where the forest is healthy.',
+        'bio.lead': 'And where it lives, everything else lives too. Our cameras have recorded peccaries, ocelots and monkeys —and the forest is also <strong>jaguar</strong> territory and home to an unusual diversity of <strong>birds and amphibians</strong>, a sign of clean water and a stable microclimate:',
+        'sp.cajuches.n': 'White-lipped peccary', 'sp.cajuches.d': 'Sensitive to forest fragmentation — a marker of intact forest.',
+        'sp.tigrillos.n': 'Ocelots', 'sp.tigrillos.d': 'Smaller cats — indicators of an intact understory.',
+        'sp.monos.n': 'Monkeys', 'sp.monos.d': 'Seed dispersers — they regenerate the forest from within.',
+        'bio.pull': 'A forest with jaguar and curassow isn’t a remnant. It’s a <span class="accent-italic">functional ecosystem</span> — and those barely remain.',
+        'drone.badge': 'Drone flight · the reserve',
+        'drone.eyebrow': 'Jaguar and ocelot territory',
+        'drone.h2': '218 hectares of tropical rainforest — continuous and intact.',
+        'drone.p': 'Seen from the air: the scale of a refuge that still breathes whole — the same forest where the jaguar, the ocelot and the curassow roam.',
+        'idea.eyebrow': 'The big idea',
+        'idea.display': 'Around 1,085 curassows remain on the planet. <span class="accent-italic">Some live in these 218 hectares.</span>',
+        'idea.lead': 'We’re not offering you a plot of land. We’re offering you the <strong>custody of a refuge</strong> — protected, georeferenced, monitored and ready to become a permanent, measurable conservation asset.',
+        'idea.polybadge': '218 ha · 2,187,380 m² · continuous forest',
+        'idea.mapcta': '📍 View on Google Maps ↗',
+        'idea.polycap': 'El Paují section — the upper green polygon of Hacienda San Juan de Frías (Finca Las Frías, Cimitarra), 218 hectares of continuous forest. Coordinates: 6°22′33″N 74°11′00″W.',
+        'why.eyebrow': 'Why this reserve, and why now',
+        'why.h2': 'The <span class="accent-italic">rational</span> case — not just the emotional one.',
+        'why.c1h': 'Defensible impact', 'why.c1p': 'This isn’t generic conservation. It’s an endemic, Critically Endangered species — with a name and a face. The kind of story a fund can take to its own donors and investors.',
+        'why.c2h': 'Strategic location', 'why.c2p': 'Magdalena Medio — the same biological corridor where ProAves and American Bird Conservancy established the only other curassow reserve. Protecting this polygon <strong>connects and extends</strong> the existing habitat rather than duplicating it.',
+        'why.c3h': 'Structurable asset', 'why.c3p': '218 ha of continuous forest, a georeferenced polygon and a biological baseline already underway. A foundation ready for an ecological easement, carbon credits, REDD+ or direct acquisition.',
+        'model.eyebrow': 'The model that makes it different',
+        'model.h2': 'Most forests disappear because they’re worth more felled than standing. <span style="font-style:italic;color:#c9a17d;">We invert that equation.</span>',
+        'model.s1h': 'You protect the forest', 'model.s1p': '218 ha of curassow refuge are secured forever.',
+        'model.s2h': 'The family reinvests', 'model.s2p': 'The proceeds fund converting the neighboring land to <strong>regenerative ranching</strong>.',
+        'model.s3h': 'The result', 'model.s3p': 'Production that restores soil and water instead of expanding into the forest. The reserve gains an <strong>allied buffer zone</strong>.',
+        'model.kicker': 'Conservation and production stop being enemies — and you’re the one who makes it possible.',
+        'ev.eyebrow': 'The evidence',
+        'ev.h2': 'Data <span class="accent-italic">and</span> emotion. All verifiable.',
+        'ev.lead': 'We’re not asking you to trust a promise. We put the field material and the full technical dossier at your disposal.',
+        'ev.cta': 'Request data room access',
+        'ev.i1t': 'Reserve video', 'ev.i1d': 'Aerial + field walkthrough',
+        'ev.i2t': 'Camera-trap archive', 'ev.i2d': 'Curassow, jaguar, peccaries, ocelots',
+        'ev.i3t': 'Georeferenced polygon', 'ev.i3d': 'The 218 ha, with coordinates',
+        'ev.i4t': 'Technical dossier', 'ev.i4d': 'Location, life zone (bh-T), water regime, biodiversity baseline',
+        'dec.eyebrow': 'The decision',
+        'dec.h2': 'Twenty years from now, this forest will be one of two things.',
+        'dec.p': 'Just another pasture — indistinguishable, silent, with one less species in the world. Or <span class="em">a refuge with a name of its own</span>, where the blue-billed curassow keeps walking among the trees because someone, today, decided it was worth it.',
+        'dec.line': 'That person could be you.',
+        'dec.cta1': 'Let’s talk about the acquisition', 'dec.cta2': 'Schedule a visit to the Reserve',
+        'dec.note': 'We respond to conservation funds, impact investors and environmental organizations within 48 hours.',
+        'con.eyebrow': 'Contact',
+        'con.display': 'Let’s talk about <span class="accent-italic">safeguarding</span> a refuge.',
+        'con.lead': 'Tell us who you are and what interests you. We’ll send you the data room and set up a conversation.',
+        'con.locK': 'Location', 'con.emailK': 'Email', 'con.respK': 'Contact',
+        'form.name': 'Name', 'form.org': 'Organization', 'form.email': 'Email', 'form.msg': 'Message',
+        'ph.name': 'Your name', 'ph.org': 'Fund / company', 'ph.email': 'name@organization.com', 'ph.msg': 'Tell us your interest in the Reserve…',
+        'form.submit': 'Send and request the data room',
+        'form.fine': 'We respond within 48 hours. Your data is used only for this conversation.',
+        'foot.line2': 'A measurable conservation project'
+      }
+    };
+
+    const langBtn = document.getElementById('langBtn');
+    const langLabel = document.getElementById('langLabel');
+
+    function applyLang(lang) {
+      if (!I18N[lang]) lang = 'es';
+      const dict = I18N[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (dict[k] != null) el.innerHTML = dict[k];
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const k = el.getAttribute('data-i18n-ph');
+        if (dict[k] != null) el.setAttribute('placeholder', dict[k]);
+      });
+      if (dict['meta.title']) document.title = dict['meta.title'];
+      const md = document.querySelector('meta[name="description"]');
+      if (md && dict['meta.desc']) md.setAttribute('content', dict['meta.desc']);
+      langLabel.textContent = (lang === 'es') ? 'EN' : 'ES';
+      langBtn.setAttribute('aria-label', (lang === 'es') ? 'Switch to English' : 'Cambiar a español');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    let current = 'es';
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved) current = saved;
+      else current = (navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en';
+    } catch (e) {}
+    applyLang(current);
+
+    langBtn.addEventListener('click', () => {
+      current = (document.documentElement.lang === 'es') ? 'en' : 'es';
+      applyLang(current);
+    });
+
+    // ---------- Nav: fondo al hacer scroll ----------
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---------- Reveal on scroll ----------
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ---------- Año ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
