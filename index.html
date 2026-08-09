@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reserva San Juan de Frías · Sección El Paují · Un refugio del ave más amenazada de Colombia</title>
+  <title>Yuwú · Reserva San Juan de Frías — Dos selvas, un mismo aliento</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23b0764e' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M50 88 V54'/%3E%3Cpath d='M50 54 L30 24'/%3E%3Cpath d='M50 54 L70 24'/%3E%3C/g%3E%3C/svg%3E" />
   <meta name="description" content="218 hectáreas de bosque húmedo tropical en el Magdalena Medio — uno de los últimos refugios del paují de pico azul (Crax alberti), En Peligro Crítico. Una oportunidad de conservación medible." />
   <meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1b1a17" media="(prefers-color-scheme: dark)" />
@@ -11,8 +12,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jfchica86.github.io/reserva-pauji/" />
-  <meta property="og:title" content="Reserva San Juan de Frías · Sección El Paují" />
-  <meta property="og:description" content="Uno de los últimos refugios reales del ave más amenazada de Colombia. 218 ha en el Magdalena Medio." />
+  <meta property="og:title" content="Yuwú · Reserva San Juan de Frías" />
+  <meta property="og:description" content="Dos selvas, un mismo aliento. Un refugio del paují de pico azul en el Magdalena Medio — donde conservar y producir dejan de ser enemigos." />
   <meta property="og:image" content="https://jfchica86.github.io/reserva-pauji/assets/hero-poster.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -278,6 +279,9 @@
     /* ---------- Por qué (3 cards) ---------- */
     .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
     @media (max-width: 860px) { .cards-3 { grid-template-columns: 1fr; } }
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 44px; }
+    @media (max-width: 760px) { .duo { grid-template-columns: 1fr; } }
+    .card .kk { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px 28px; box-shadow: var(--shadow); transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .card .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display:flex; align-items:center; justify-content:center; font-size: 22px; margin-bottom: 18px; }
@@ -357,11 +361,12 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Reserva San Juan de Frías, sección El Paují">
+      <a class="brand" href="#top" aria-label="Yuwú · Reserva San Juan de Frías">
         <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <path d="M34 88 C14 80 16 40 44 34 C48 14 72 16 60 38 C70 42 74 50 74 56 L90 60 L73 66" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 14 C 76 34 76 66 50 86 C 24 66 24 34 50 14 Z" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+          <path d="M50 14 L50 86" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
         </svg>
-        <span class="name">Reserva San Juan de Frías<small data-i18n="nav.brandSub">sección El Paují · Magdalena Medio</small></span>
+        <span class="name">Yuwú<small data-i18n="nav.brandSub">Reserva San Juan de Frías · Magdalena Medio</small></span>
       </a>
       <nav class="nav-links">
         <a class="link" href="#juego" data-i18n="nav.species">La especie</a>
@@ -387,13 +392,26 @@
     <div class="hero-scrim"></div>
     <div class="hero-content">
       <div class="wrap">
-        <h1 data-i18n="hero.h1">El ave más amenazada de Colombia todavía vive aquí.</h1>
-        <p class="sub" data-i18n="hero.sub">La pregunta es por cuánto tiempo — y quién decidirá el desenlace.</p>
+        <span class="eyebrow" style="color:#d6b28f; margin-bottom:20px;" data-i18n="hero.brand">Yuwú · Reserva San Juan de Frías</span>
+        <h1 data-i18n="hero.h1">Dos selvas, un mismo aliento.</h1>
+        <p class="sub" data-i18n="hero.sub">Un refugio del ave más amenazada de Colombia — donde conservar y producir dejan de ser enemigos.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#juego"><span data-i18n="hero.cta1">Conozca la Reserva</span> <span class="btn-arrow">→</span></a>
           <a class="btn btn-light" href="#evidencia" data-i18n="hero.cta2">Ver la evidencia de campo ↓</a>
         </div>
         <div class="hero-scroll" aria-hidden="true"><span class="dot"></span> <span data-i18n="hero.scroll">Desplácese</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EL NOMBRE (YUWÚ / YARIGUÍ) ===================== -->
+  <section id="nombre" style="background:var(--bg-grouped);">
+    <div class="wrap">
+      <div class="reveal" style="max-width:60ch; margin:0 auto; text-align:center;">
+        <span class="eyebrow" data-i18n="name.eyebrow">El nombre</span>
+        <h2 class="section-head" style="margin:14px auto 0; max-width:22ch;" data-i18n="name.h2"><span class="accent-italic">Yuwú</span> — la selva que resiste.</h2>
+        <p class="lead" style="margin:22px auto 0; text-align:left;" data-i18n="name.p1">En la lengua de los <strong>Yariguíes</strong> —el pueblo caribe que habitó estas selvas del Magdalena Medio santandereano y resistió hasta la desaparición de su idioma— <em>Yuwú</em> evoca el <strong>monte denso, la selva viva</strong>. Tomamos su palabra como homenaje: este bosque sigue en pie justo donde ellos lo defendieron.</p>
+        <p class="poly-cap" style="margin-top:18px;" data-i18n="name.note">Aproximación reconstruida a partir de lenguas caribes hermanas — un nombre prestado con respeto, no una traducción literal.</p>
       </div>
     </div>
   </section>
@@ -489,6 +507,32 @@
     </div>
   </section>
 
+  <!-- ===================== LA DUALIDAD (GRAN IDEA) ===================== -->
+  <section id="dualidad">
+    <div class="wrap">
+      <div class="reveal" style="max-width:56ch;">
+        <span class="eyebrow" data-i18n="dual.eyebrow">La idea que lo cambia todo</span>
+        <h2 class="section-head" style="margin-top:14px; max-width:none;" data-i18n="dual.h2">No es una selva. Son <span class="accent-italic">dos</span> — y respiran juntas.</h2>
+        <p class="lead" style="margin-top:20px;" data-i18n="dual.lead">Yuwú protege 218 hectáreas de selva virgen y, a su lado, transforma 1.074 hectáreas de ganadería en producción regenerativa. Conservar y producir dejan de ser enemigos: se vuelven un mismo sistema que respira.</p>
+      </div>
+      <div class="duo">
+        <div class="card reveal">
+          <div class="ico">🌿</div>
+          <div class="kk" data-i18n="dual.c1k">Selva 1 · Conservación</div>
+          <h3 style="margin-top:8px;" data-i18n="dual.c1h">218 ha de refugio</h3>
+          <p data-i18n="dual.c1p">Bosque húmedo tropical continuo e intacto: hogar del paují de pico azul, el jaguar y el tigrillo. El corazón que se conserva para siempre.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🌱</div>
+          <div class="kk" data-i18n="dual.c2k">Selva 2 · Producción regenerativa</div>
+          <h3 style="margin-top:8px;" data-i18n="dual.c2h">1.074 ha que sanan</h3>
+          <p data-i18n="dual.c2p">La finca vecina pasa de ganadería convencional a regenerativa: restaura suelo y agua, blinda el perímetro del refugio y financia la conservación sin depender de donaciones.</p>
+        </div>
+      </div>
+      <p class="pullquote reveal" style="margin:40px auto 0; text-align:center; max-width:30ch;" data-i18n="dual.pull">Dos selvas, un mismo aliento — el oxígeno de un solo ecosistema vivo.</p>
+    </div>
+  </section>
+
   <!-- ===================== 5 · LA IDEA GRANDE ===================== -->
   <section class="big-idea" style="background:var(--bg-grouped);">
     <div class="wrap">
@@ -541,23 +585,24 @@
       <div class="flywheel">
         <div class="step reveal">
           <div class="n"></div>
-          <h4 data-i18n="model.s1h">Usted protege el bosque</h4>
-          <p data-i18n="model.s1p">218 ha de refugio del paují quedan aseguradas para siempre.</p>
+          <h4 data-i18n="model.s1h">Usted custodia el bosque</h4>
+          <p data-i18n="model.s1p">218 ha de selva virgen quedan aseguradas para siempre como refugio del paují y los felinos.</p>
           <span class="arrow">→</span>
         </div>
         <div class="step reveal">
           <div class="n"></div>
-          <h4 data-i18n="model.s2h">La familia reinvierte</h4>
-          <p data-i18n="model.s2p">Los recursos financian la conversión de las tierras vecinas a <strong>ganadería regenerativa</strong>.</p>
+          <h4 data-i18n="model.s2h">El lodge lo autofinancia</h4>
+          <p data-i18n="model.s2p">Un <strong>lodge boutique</strong> de baja huella convierte el turismo de inmersión en el motor de caja — la conservación deja de depender de donaciones.</p>
           <span class="arrow">→</span>
         </div>
         <div class="step reveal">
           <div class="n"></div>
-          <h4 data-i18n="model.s3h">El resultado</h4>
-          <p data-i18n="model.s3p">Producción que restaura suelo y agua en lugar de expandirse sobre el bosque. La reserva gana una <strong>zona de amortiguación aliada</strong>.</p>
+          <h4 data-i18n="model.s3h">La selva vecina se regenera</h4>
+          <p data-i18n="model.s3p">Los recursos transforman las 1.074 ha en <strong>ganadería regenerativa</strong>: suelo y agua que sanan, y una zona de amortiguación que blinda el refugio.</p>
         </div>
       </div>
-      <p class="kicker reveal" style="color:#d6b28f;font-family:var(--font-display);font-style:italic;font-size:clamp(19px,2.4vw,25px);margin-top:40px;max-width:40ch;line-height:1.4;" data-i18n="model.kicker">Conservar y producir dejan de ser enemigos — y usted es quien lo hace posible.</p>
+      <p class="kicker reveal" style="color:#d6b28f;font-family:var(--font-display);font-style:italic;font-size:clamp(19px,2.4vw,25px);margin-top:40px;max-width:42ch;line-height:1.4;" data-i18n="model.kicker">Un modelo donde la selva vale más viva que talada.</p>
+      <a class="btn btn-light reveal" href="#contacto" style="margin-top:26px;"><span data-i18n="model.cta">Solicitar el deck de inversión</span> <span class="btn-arrow">→</span></a>
     </div>
   </section>
 
@@ -612,9 +657,8 @@
           <p class="lead reveal" data-i18n="con.lead">Cuéntenos quién es y qué le interesa. Le enviaremos el data room y coordinaremos una conversación.</p>
           <div class="contact-meta reveal">
             <div class="row"><span class="k" data-i18n="con.locK">Ubicación</span><span>Hacienda San Juan de Frías · Cimitarra, Santander · Magdalena Medio, Colombia</span></div>
-            <div class="row"><span class="k" data-i18n="con.emailK">Correo</span><span><a href="mailto:juan.francisco.chica@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">juan.francisco.chica@gmail.com</a></span></div>
-            <div class="row"><span class="k">WhatsApp</span><span><a href="https://wa.me/573234832669" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">+57 323 483 2669</a></span></div>
-            <div class="row"><span class="k" data-i18n="con.respK">Responsable</span><span>Juan Francisco Chica</span></div>
+            <div class="row"><span class="k">Juan F. Chica</span><span><span data-i18n="con.r1">Fundador · tierra y visión</span><br><a href="mailto:juan.francisco.chica@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">juan.francisco.chica@gmail.com</a> · <a href="https://wa.me/573234832669" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">+57 323 483 2669</a></span></div>
+            <div class="row"><span class="k">Camilo Vergara</span><span><span data-i18n="con.r2">Lidera la ronda de inversión</span><br><a href="mailto:camilovergaramunera@gmail.com" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">camilovergaramunera@gmail.com</a> · <a href="https://wa.me/573113525696" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">+57 311 352 5696</a></span></div>
           </div>
         </div>
         <!-- Formulario: por defecto abre el cliente de correo (mailto). Para recibir
@@ -639,9 +683,10 @@
     <div class="wrap">
       <a class="brand" href="#top">
         <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <path d="M34 88 C14 80 16 40 44 34 C48 14 72 16 60 38 C70 42 74 50 74 56 L90 60 L73 66" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 14 C 76 34 76 66 50 86 C 24 66 24 34 50 14 Z" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+          <path d="M50 14 L50 86" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
         </svg>
-        <span class="name">Reserva San Juan de Frías<small data-i18n="nav.brandSub">sección El Paují · Magdalena Medio</small></span>
+        <span class="name">Yuwú<small data-i18n="nav.brandSub">Reserva San Juan de Frías · Magdalena Medio</small></span>
       </a>
       <div class="fmeta">
         Hacienda San Juan de Frías · Cimitarra, Santander · Colombia<br/>
@@ -654,13 +699,24 @@
     // ---------- i18n ----------
     const I18N = {
       es: {
-        'meta.title': 'Reserva San Juan de Frías · Sección El Paují · Un refugio del ave más amenazada de Colombia',
-        'meta.desc': '218 hectáreas de bosque húmedo tropical en el Magdalena Medio — uno de los últimos refugios del paují de pico azul (Crax alberti), En Peligro Crítico. Una oportunidad de conservación medible.',
-        'nav.brandSub': 'sección El Paují · Magdalena Medio',
+        'meta.title': 'Yuwú · Reserva San Juan de Frías — Dos selvas, un mismo aliento',
+        'meta.desc': 'Yuwú: un refugio del paují de pico azul (Crax alberti, En Peligro Crítico) en el Magdalena Medio. Dos selvas que respiran juntas — conservación y producción regenerativa.',
+        'nav.brandSub': 'Reserva San Juan de Frías · Magdalena Medio',
         'nav.species': 'La especie', 'nav.discovery': 'El hallazgo', 'nav.model': 'El modelo', 'nav.evidence': 'Evidencia', 'nav.cta': 'Conversemos',
-        'hero.h1': 'El ave más amenazada de Colombia todavía vive aquí.',
-        'hero.sub': 'La pregunta es por cuánto tiempo — y quién decidirá el desenlace.',
+        'hero.brand': 'Yuwú · Reserva San Juan de Frías',
+        'hero.h1': 'Dos selvas, un mismo aliento.',
+        'hero.sub': 'Un refugio del ave más amenazada de Colombia — donde conservar y producir dejan de ser enemigos.',
         'hero.cta1': 'Conozca la Reserva', 'hero.cta2': 'Ver la evidencia de campo ↓', 'hero.scroll': 'Desplácese',
+        'name.eyebrow': 'El nombre',
+        'name.h2': '<span class="accent-italic">Yuwú</span> — la selva que resiste.',
+        'name.p1': 'En la lengua de los <strong>Yariguíes</strong> —el pueblo caribe que habitó estas selvas del Magdalena Medio santandereano y resistió hasta la desaparición de su idioma— <em>Yuwú</em> evoca el <strong>monte denso, la selva viva</strong>. Tomamos su palabra como homenaje: este bosque sigue en pie justo donde ellos lo defendieron.',
+        'name.note': 'Aproximación reconstruida a partir de lenguas caribes hermanas — un nombre prestado con respeto, no una traducción literal.',
+        'dual.eyebrow': 'La idea que lo cambia todo',
+        'dual.h2': 'No es una selva. Son <span class="accent-italic">dos</span> — y respiran juntas.',
+        'dual.lead': 'Yuwú protege 218 hectáreas de selva virgen y, a su lado, transforma 1.074 hectáreas de ganadería en producción regenerativa. Conservar y producir dejan de ser enemigos: se vuelven un mismo sistema que respira.',
+        'dual.c1k': 'Selva 1 · Conservación', 'dual.c1h': '218 ha de refugio', 'dual.c1p': 'Bosque húmedo tropical continuo e intacto: hogar del paují de pico azul, el jaguar y el tigrillo. El corazón que se conserva para siempre.',
+        'dual.c2k': 'Selva 2 · Producción regenerativa', 'dual.c2h': '1.074 ha que sanan', 'dual.c2p': 'La finca vecina pasa de ganadería convencional a regenerativa: restaura suelo y agua, blinda el perímetro del refugio y financia la conservación sin depender de donaciones.',
+        'dual.pull': 'Dos selvas, un mismo aliento — el oxígeno de un solo ecosistema vivo.',
         'stakes.eyebrow': 'Lo que está en juego',
         'stakes.h2': 'En 25 años, el paují de pico azul perdió el <span class="accent-italic">92,8%</span> de su hábitat.',
         'stakes.lead': 'El <strong>paují de pico azul</strong> <em>(Crax alberti)</em> es endémico de Colombia —no existe en ningún otro lugar del planeta—. Hoy está clasificado <strong>En Peligro Crítico</strong> por la UICN: la última categoría antes de "Extinto en Estado Silvestre". Cada año que pasa, su mundo se hace más pequeño.',
@@ -699,10 +755,11 @@
         'why.c3h': 'Activo estructurable', 'why.c3p': '218 ha de bosque continuo, polígono georreferenciado y línea base biológica ya iniciada. Base lista para servidumbre ecológica, bonos de carbono, REDD+ o adquisición directa.',
         'model.eyebrow': 'El modelo que lo hace distinto',
         'model.h2': 'La mayoría de los bosques desaparecen porque valen más talados que en pie. <span style="font-style:italic;color:#c9a17d;">Nosotros invertimos esa ecuación.</span>',
-        'model.s1h': 'Usted protege el bosque', 'model.s1p': '218 ha de refugio del paují quedan aseguradas para siempre.',
-        'model.s2h': 'La familia reinvierte', 'model.s2p': 'Los recursos financian la conversión de las tierras vecinas a <strong>ganadería regenerativa</strong>.',
-        'model.s3h': 'El resultado', 'model.s3p': 'Producción que restaura suelo y agua en lugar de expandirse sobre el bosque. La reserva gana una <strong>zona de amortiguación aliada</strong>.',
-        'model.kicker': 'Conservar y producir dejan de ser enemigos — y usted es quien lo hace posible.',
+        'model.s1h': 'Usted custodia el bosque', 'model.s1p': '218 ha de selva virgen quedan aseguradas para siempre como refugio del paují y los felinos.',
+        'model.s2h': 'El lodge lo autofinancia', 'model.s2p': 'Un <strong>lodge boutique</strong> de baja huella convierte el turismo de inmersión en el motor de caja — la conservación deja de depender de donaciones.',
+        'model.s3h': 'La selva vecina se regenera', 'model.s3p': 'Los recursos transforman las 1.074 ha en <strong>ganadería regenerativa</strong>: suelo y agua que sanan, y una zona de amortiguación que blinda el refugio.',
+        'model.kicker': 'Un modelo donde la selva vale más viva que talada.',
+        'model.cta': 'Solicitar el deck de inversión',
         'ev.eyebrow': 'La evidencia',
         'ev.h2': 'Dato <span class="accent-italic">y</span> emoción. Todo verificable.',
         'ev.lead': 'No le pedimos que confíe en una promesa. Ponemos a su disposición el material de campo y el dossier técnico completo.',
@@ -721,6 +778,7 @@
         'con.display': 'Hablemos de <span class="accent-italic">custodiar</span> un refugio.',
         'con.lead': 'Cuéntenos quién es y qué le interesa. Le enviaremos el data room y coordinaremos una conversación.',
         'con.locK': 'Ubicación', 'con.emailK': 'Correo', 'con.respK': 'Responsable',
+        'con.r1': 'Fundador · tierra y visión', 'con.r2': 'Lidera la ronda de inversión',
         'form.name': 'Nombre', 'form.org': 'Organización', 'form.email': 'Correo', 'form.msg': 'Mensaje',
         'ph.name': 'Su nombre', 'ph.org': 'Fondo / empresa', 'ph.email': 'nombre@organizacion.com', 'ph.msg': 'Cuéntenos su interés en la Reserva…',
         'form.submit': 'Enviar y solicitar el data room',
@@ -728,13 +786,24 @@
         'foot.line2': 'Un proyecto de conservación medible'
       },
       en: {
-        'meta.title': 'Reserva San Juan de Frías · El Paují Section · A refuge for Colombia’s most endangered bird',
-        'meta.desc': '218 hectares of tropical rainforest in the Magdalena Medio — one of the last refuges of the blue-billed curassow (Crax alberti), Critically Endangered. A measurable conservation opportunity.',
-        'nav.brandSub': 'El Paují section · Magdalena Medio',
+        'meta.title': 'Yuwú · Reserva San Juan de Frías — Two forests, one breath',
+        'meta.desc': 'Yuwú: a refuge for the blue-billed curassow (Crax alberti, Critically Endangered) in Colombia’s Magdalena Medio. Two forests that breathe together — conservation and regenerative production.',
+        'nav.brandSub': 'Reserva San Juan de Frías · Magdalena Medio',
         'nav.species': 'The species', 'nav.discovery': 'The discovery', 'nav.model': 'The model', 'nav.evidence': 'Evidence', 'nav.cta': 'Let’s talk',
-        'hero.h1': 'Colombia’s most endangered bird still lives here.',
-        'hero.sub': 'The question is for how long — and who will decide the outcome.',
+        'hero.brand': 'Yuwú · Reserva San Juan de Frías',
+        'hero.h1': 'Two forests, one breath.',
+        'hero.sub': 'A refuge for Colombia’s most endangered bird — where conservation and production stop being enemies.',
         'hero.cta1': 'Discover the Reserve', 'hero.cta2': 'See the field evidence ↓', 'hero.scroll': 'Scroll',
+        'name.eyebrow': 'The name',
+        'name.h2': '<span class="accent-italic">Yuwú</span> — the forest that resists.',
+        'name.p1': 'In the language of the <strong>Yariguíes</strong> —the Carib people who inhabited these forests of Colombia’s Magdalena Medio and resisted until their language vanished— <em>Yuwú</em> evokes <strong>dense forest, living wilderness</strong>. We take their word as homage: this forest still stands exactly where they defended it.',
+        'name.note': 'A reconstruction drawn from sister Carib languages — a name borrowed with respect, not a literal translation.',
+        'dual.eyebrow': 'The idea that changes everything',
+        'dual.h2': 'It’s not one forest. It’s <span class="accent-italic">two</span> — and they breathe together.',
+        'dual.lead': 'Yuwú protects 218 hectares of virgin forest and, right beside it, transforms 1,074 hectares of cattle ranching into regenerative production. Conservation and production stop being enemies: they become one breathing system.',
+        'dual.c1k': 'Forest 1 · Conservation', 'dual.c1h': '218 ha of refuge', 'dual.c1p': 'Continuous, intact tropical rainforest: home to the blue-billed curassow, the jaguar and the ocelot. The heart that is preserved forever.',
+        'dual.c2k': 'Forest 2 · Regenerative production', 'dual.c2h': '1,074 ha that heal', 'dual.c2p': 'The neighboring farm shifts from conventional to regenerative ranching: it restores soil and water, shields the refuge’s perimeter, and funds conservation without relying on donations.',
+        'dual.pull': 'Two forests, one breath — the oxygen of a single living ecosystem.',
         'stakes.eyebrow': 'What’s at stake',
         'stakes.h2': 'In 25 years, the blue-billed curassow lost <span class="accent-italic">92.8%</span> of its habitat.',
         'stakes.lead': 'The <strong>blue-billed curassow</strong> <em>(Crax alberti)</em> is endemic to Colombia —it exists nowhere else on Earth—. Today it is classified <strong>Critically Endangered</strong> by the IUCN: the last category before "Extinct in the Wild." Every year that passes, its world grows smaller.',
@@ -773,10 +842,11 @@
         'why.c3h': 'Structurable asset', 'why.c3p': '218 ha of continuous forest, a georeferenced polygon and a biological baseline already underway. A foundation ready for an ecological easement, carbon credits, REDD+ or direct acquisition.',
         'model.eyebrow': 'The model that makes it different',
         'model.h2': 'Most forests disappear because they’re worth more felled than standing. <span style="font-style:italic;color:#c9a17d;">We invert that equation.</span>',
-        'model.s1h': 'You protect the forest', 'model.s1p': '218 ha of curassow refuge are secured forever.',
-        'model.s2h': 'The family reinvests', 'model.s2p': 'The proceeds fund converting the neighboring land to <strong>regenerative ranching</strong>.',
-        'model.s3h': 'The result', 'model.s3p': 'Production that restores soil and water instead of expanding into the forest. The reserve gains an <strong>allied buffer zone</strong>.',
-        'model.kicker': 'Conservation and production stop being enemies — and you’re the one who makes it possible.',
+        'model.s1h': 'You safeguard the forest', 'model.s1p': '218 ha of virgin forest are secured forever as a refuge for the curassow and the cats.',
+        'model.s2h': 'The lodge funds it', 'model.s2p': 'A low-footprint <strong>boutique lodge</strong> turns immersive tourism into the cash engine — conservation no longer depends on donations.',
+        'model.s3h': 'The neighboring forest regenerates', 'model.s3p': 'The proceeds transform the 1,074 ha into <strong>regenerative ranching</strong>: soil and water that heal, and a buffer zone that shields the refuge.',
+        'model.kicker': 'A model where the forest is worth more alive than felled.',
+        'model.cta': 'Request the investment deck',
         'ev.eyebrow': 'The evidence',
         'ev.h2': 'Data <span class="accent-italic">and</span> emotion. All verifiable.',
         'ev.lead': 'We’re not asking you to trust a promise. We put the field material and the full technical dossier at your disposal.',
@@ -795,6 +865,7 @@
         'con.display': 'Let’s talk about <span class="accent-italic">safeguarding</span> a refuge.',
         'con.lead': 'Tell us who you are and what interests you. We’ll send you the data room and set up a conversation.',
         'con.locK': 'Location', 'con.emailK': 'Email', 'con.respK': 'Contact',
+        'con.r1': 'Founder · land & vision', 'con.r2': 'Leads the investment round',
         'form.name': 'Name', 'form.org': 'Organization', 'form.email': 'Email', 'form.msg': 'Message',
         'ph.name': 'Your name', 'ph.org': 'Fund / company', 'ph.email': 'name@organization.com', 'ph.msg': 'Tell us your interest in the Reserve…',
         'form.submit': 'Send and request the data room',
