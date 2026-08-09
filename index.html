@@ -97,6 +97,13 @@
     .hero-stats .n { font-family: var(--serif); font-size: 40px; line-height: 1; }
     .hero-stats .k { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--verde-tenue); margin-top: 8px; }
 
+    /* ---------- stat strip (contenido) ---------- */
+    .statstrip { border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 64px; }
+    .statstrip .st { padding: 34px; border-right: 1px solid var(--line-dark); }
+    .statstrip .st:last-child { border-right: none; }
+    .statstrip .n { font-family: var(--serif); font-size: clamp(34px, 4vw, 46px); line-height: 1; }
+    .statstrip .k { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--verde-tenue); margin-top: 10px; line-height: 1.5; }
+
     /* ---------- generic section head ---------- */
     .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 70px; }
     .cols4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 50px; }
@@ -171,6 +178,7 @@
       </a>
       <nav class="navlinks">
         <a class="link" href="#territorio" data-i18n="nav.territory">Territorio</a>
+        <a class="link" href="#pauji" data-i18n="nav.pauji">El paují</a>
         <a class="link" href="#vida" data-i18n="nav.life">La vida</a>
         <a class="link" href="#proyecto" data-i18n="nav.project">Proyecto</a>
         <a class="link" href="#estancia" data-i18n="nav.stay">Estancia</a>
@@ -237,22 +245,41 @@
     </div>
   </section>
 
+  <!-- ░ EL PAUJÍ (profundidad + cifras + hallazgo) ░ -->
+  <section id="pauji" style="border-top:1px solid var(--line-dark-2);">
+    <div class="wrap">
+      <div class="two" style="align-items:end;">
+        <div class="reveal">
+          <div class="label" style="color:var(--oro);" data-i18n="pauji.k">El paují de pico azul</div>
+          <h2 style="margin-top:28px;" data-i18n="pauji.h">El ave más amenazada de Colombia.<br>Y todavía vive aquí.</h2>
+        </div>
+        <p class="body reveal" style="max-width:560px;" data-i18n="pauji.p"><em>Crax alberti</em> es endémico de Colombia: no existe en ningún otro lugar del planeta. La UICN lo clasifica En Peligro Crítico —la última categoría antes de extinto en estado silvestre—. En 25 años perdió el 92,8% de su hábitat.</p>
+      </div>
+      <div class="statstrip reveal">
+        <div class="st"><div class="n" data-i18n="pauji.s1n">92,8%</div><div class="k" data-i18n="pauji.s1k">del hábitat perdido en 25 años</div></div>
+        <div class="st"><div class="n" data-i18n="pauji.s2n">1.150 km²</div><div class="k" data-i18n="pauji.s2k">de hábitat restante · de 12.003</div></div>
+        <div class="st"><div class="n" style="color:var(--oro);" data-i18n="pauji.s3n">~1.085</div><div class="k" data-i18n="pauji.s3k">individuos adultos en el planeta</div></div>
+        <div class="st"><div class="n" data-i18n="pauji.s4n">CR</div><div class="k" data-i18n="pauji.s4k">En Peligro Crítico · UICN</div></div>
+      </div>
+      <div class="frame reveal" style="aspect-ratio:16/8; margin-top:70px;">
+        <span class="badge"><span class="dot"></span> <span data-i18n="badge.cam">Cámara trampa</span></span>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg"><source src="assets/hallazgo-pauji.mp4" type="video/mp4" /></video>
+      </div>
+      <p class="body reveal" style="max-width:760px; margin-top:34px;" data-i18n="pauji.find">Una noche, dentro del polígono, la cámara trampa se activó. Ahí estaba: un paují de pico azul, vivo, en su territorio. No un archivo, no un fósil —una población que respira donde el bosque sigue en pie.</p>
+    </div>
+  </section>
+
   <!-- ░ LA VIDA (fauna · cámara trampa) ░ -->
   <section id="vida" style="background:var(--monte-2); border-top:1px solid var(--line-dark-2);">
     <div class="wrap fauna">
       <div class="two" style="align-items:end;">
         <div class="reveal">
           <div class="label" style="color:var(--oro);" data-i18n="life.k">La vida</div>
-          <h2 style="margin-top:28px;" data-i18n="life.h">Registrada en cámara,<br>no en adjetivos.</h2>
+          <h2 style="margin-top:28px;" data-i18n="life.h">El paují no vive solo.</h2>
         </div>
-        <p class="body reveal" style="max-width:560px;" data-i18n="life.p">El paují de pico azul —endémico y En Peligro Crítico— fue documentado vivo dentro del polígono. Donde él aparece, el bosque está sano: cajuches, monos y felinos comparten el mismo dosel.</p>
+        <p class="body reveal" style="max-width:560px;" data-i18n="life.p">Donde el paují aparece, el bosque está sano. Cajuches, monos y felinos comparten el mismo dosel —cada registro, una prueba de un ecosistema todavía completo.</p>
       </div>
       <div class="fauna-grid">
-        <div class="card reveal">
-          <div class="thumb"><span class="badge"><span class="dot"></span> <span data-i18n="badge.cam">Cámara trampa</span></span><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg"><source src="assets/hallazgo-pauji.mp4" type="video/mp4" /></video></div>
-          <div class="n" data-i18n="life.n1">Paují de pico azul</div>
-          <div class="d"><em>Crax alberti</em> · <span data-i18n="life.d1">endémico · En Peligro Crítico</span></div>
-        </div>
         <div class="card reveal">
           <div class="thumb"><span class="badge"><span class="dot"></span> <span data-i18n="badge.cam">Cámara trampa</span></span><video autoplay muted loop playsinline preload="metadata"><source src="assets/cajuches.mp4" type="video/mp4" /></video></div>
           <div class="n" data-i18n="life.n2">Cajuches</div>
@@ -375,7 +402,7 @@
       es: {}, // español = texto por defecto del HTML (se rellena al cargar)
       en: {
         'meta.title': 'Yuwú · Reserva San Juan de Frías — The forest that resists',
-        'nav.territory': 'Territory', 'nav.life': 'Life', 'nav.project': 'Project', 'nav.stay': 'The stay', 'nav.invest': 'Invest',
+        'nav.territory': 'Territory', 'nav.pauji': 'The curassow', 'nav.life': 'Life', 'nav.project': 'Project', 'nav.stay': 'The stay', 'nav.invest': 'Invest',
         'hero.place': 'Cimitarra · Santander · Colombia',
         'hero.sub': 'Reserva San Juan de Frías',
         'hero.tag': 'Two hundred and eighteen untouched hectares of virgin forest. Six lodges you will barely see.',
@@ -389,8 +416,16 @@
         'terr.t2': 'Its own water', 'terr.p2': 'Streams born within the property. Water leaves cleaner than it arrived.',
         'terr.t3': 'A single owner', 'terr.p3': 'The reserve adjoins the San Juan de Frías farm. Clean title, defined boundaries.',
         'terr.t4': 'Controlled access', 'terr.p4': 'One entrance only. Permanent capacity kept below twenty people.',
-        'life.k': 'Life', 'life.h': 'Recorded on camera,<br>not in adjectives.',
-        'life.p': 'The blue-billed curassow —endemic and Critically Endangered— was documented alive inside the polygon. Where it appears, the forest is healthy: peccaries, monkeys and wild cats share the same canopy.',
+        'pauji.k': 'The blue-billed curassow',
+        'pauji.h': 'Colombia’s most endangered bird.<br>And it still lives here.',
+        'pauji.p': '<em>Crax alberti</em> is endemic to Colombia: it exists nowhere else on Earth. The IUCN lists it as Critically Endangered —the last category before extinct in the wild—. In 25 years it lost 92.8% of its habitat.',
+        'pauji.s1n': '92.8%', 'pauji.s1k': 'of its habitat lost in 25 years',
+        'pauji.s2n': '1,150 km²', 'pauji.s2k': 'of habitat remaining · from 12,003',
+        'pauji.s3n': '~1,085', 'pauji.s3k': 'adult individuals on the planet',
+        'pauji.s4n': 'CR', 'pauji.s4k': 'Critically Endangered · IUCN',
+        'pauji.find': 'One night, inside the polygon, the camera trap triggered. There it was: a blue-billed curassow, alive, in its territory. Not an archive, not a fossil —a population that breathes where the forest still stands.',
+        'life.k': 'Life', 'life.h': 'The curassow does not live alone.',
+        'life.p': 'Where the curassow appears, the forest is healthy. Peccaries, monkeys and wild cats share the same canopy —each record, proof of an ecosystem still whole.',
         'life.n1': 'Blue-billed curassow', 'life.d1': 'endemic · Critically Endangered',
         'life.n2': 'White-lipped peccary', 'life.d2': 'sensitive to fragmentation',
         'life.n3': 'Monkeys', 'life.d3': 'seed dispersers · they regenerate the canopy',
