@@ -124,6 +124,20 @@
     .fauna .n { font-family: var(--serif); font-size: 26px; margin-top: 20px; }
     .fauna .d { font-size: 13px; line-height: 1.7; color: var(--verde-tenue); margin-top: 8px; }
 
+    /* ---------- galería ---------- */
+    .gallery-feature { position: relative; aspect-ratio: 16/9; overflow: hidden; border: 1px solid var(--line-dark); cursor: zoom-in; margin-top: 64px; }
+    .gallery-feature img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+    .gallery-feature:hover img { transform: scale(1.04); }
+    .gal-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .gal-tile { position: relative; aspect-ratio: 4/3; overflow: hidden; border: 1px solid var(--line-dark); background: var(--panel); cursor: zoom-in; }
+    .gal-tile img, .gal-tile video { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+    .gal-tile:hover img { transform: scale(1.05); }
+    .gal-cap { position: absolute; left: 14px; bottom: 12px; z-index: 2; font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--arena); text-shadow: 0 1px 8px rgba(0,0,0,.7); }
+    .lb { position: fixed; inset: 0; z-index: 100; background: rgba(11,15,12,0.94); display: none; align-items: center; justify-content: center; padding: 5vw; cursor: zoom-out; }
+    .lb.open { display: flex; }
+    .lb img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 20px 70px rgba(0,0,0,.6); }
+    .lb-close { position: absolute; top: 24px; right: 30px; color: var(--arena); font-family: var(--sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+
     /* ---------- proyecto (cream) ---------- */
     .cream { background: var(--arena); color: var(--monte); }
     .cream .muted { color: var(--ink-cream); }
@@ -180,6 +194,7 @@
         <a class="link" href="#territorio" data-i18n="nav.territory">Territorio</a>
         <a class="link" href="#pauji" data-i18n="nav.pauji">El paují</a>
         <a class="link" href="#vida" data-i18n="nav.life">La vida</a>
+        <a class="link" href="#galeria" data-i18n="nav.gallery">Galería</a>
         <a class="link" href="#proyecto" data-i18n="nav.project">Proyecto</a>
         <a class="link" href="#estancia" data-i18n="nav.stay">Estancia</a>
         <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
@@ -300,6 +315,33 @@
     </div>
   </section>
 
+  <!-- ░ GALERÍA ░ -->
+  <section id="galeria" style="border-top:1px solid var(--line-dark-2);">
+    <div class="wrap">
+      <div class="two" style="align-items:end;">
+        <div class="reveal">
+          <div class="label" style="color:var(--oro);" data-i18n="gal.k">Galería</div>
+          <h2 style="margin-top:28px;" data-i18n="gal.h">Desde el aire<br>y desde el suelo.</h2>
+        </div>
+        <p class="body reveal" style="max-width:560px;" data-i18n="gal.p">El polígono, sin filtros: el dosel continuo, las quebradas propias y el sotobosque donde trabaja la cámara.</p>
+      </div>
+
+      <div class="gallery-feature reveal" data-full="assets/gallery/aerea-1.jpg"><img src="assets/gallery/aerea-1.jpg" alt="Vista aérea del dosel continuo de la reserva" loading="lazy" /></div>
+
+      <div class="gal-grid">
+        <div class="gal-tile reveal" data-full="assets/gallery/aerea-6.jpg"><img src="assets/gallery/aerea-6.jpg" alt="Vista aérea con la quebrada" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/tierra-1.jpg"><span class="gal-cap" data-i18n="gal.c1">Cámara trampa · quebrada</span><img src="assets/gallery/tierra-1.jpg" alt="Cámara trampa montada junto a la quebrada" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/aerea-2.jpg"><img src="assets/gallery/aerea-2.jpg" alt="Vista aérea del bosque" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/tierra-2.jpg"><span class="gal-cap" data-i18n="gal.c2">Interior de selva</span><img src="assets/gallery/tierra-2.jpg" alt="Interior de la selva con quebrada" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/aerea-7.jpg"><img src="assets/gallery/aerea-7.jpg" alt="Vista aérea del valle y el río" loading="lazy" /></div>
+        <div class="gal-tile reveal"><video autoplay muted loop playsinline preload="metadata"><source src="assets/gallery/recorrido.mp4" type="video/mp4" /></video></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/aerea-3.jpg"><img src="assets/gallery/aerea-3.jpg" alt="Vista aérea del dosel" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/tierra-3.jpg"><span class="gal-cap" data-i18n="gal.c3">Sotobosque</span><img src="assets/gallery/tierra-3.jpg" alt="Sotobosque y helechos" loading="lazy" /></div>
+        <div class="gal-tile reveal" data-full="assets/gallery/aerea-4.jpg"><img src="assets/gallery/aerea-4.jpg" alt="Vista aérea del bosque continuo" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ░ PROYECTO ░ -->
   <section id="proyecto" class="cream">
     <div class="wrap">
@@ -396,13 +438,18 @@
     </div>
   </footer>
 
+  <!-- ░ LIGHTBOX ░ -->
+  <div class="lb" id="lb"><span class="lb-close" data-i18n="gal.close">Cerrar ✕</span><img src="" alt="" /></div>
+
   <script>
     // ---------- i18n (ES / EN) ----------
     const I18N = {
       es: {}, // español = texto por defecto del HTML (se rellena al cargar)
       en: {
         'meta.title': 'Yuwú · Reserva San Juan de Frías — The forest that resists',
-        'nav.territory': 'Territory', 'nav.pauji': 'The curassow', 'nav.life': 'Life', 'nav.project': 'Project', 'nav.stay': 'The stay', 'nav.invest': 'Invest',
+        'nav.territory': 'Territory', 'nav.pauji': 'The curassow', 'nav.life': 'Life', 'nav.gallery': 'Gallery', 'nav.project': 'Project', 'nav.stay': 'The stay', 'nav.invest': 'Invest',
+        'gal.k': 'Gallery', 'gal.h': 'From the air<br>and from the ground.', 'gal.p': 'The polygon, unfiltered: the continuous canopy, its own streams and the understory where the camera works.',
+        'gal.c1': 'Camera trap · stream', 'gal.c2': 'Forest interior', 'gal.c3': 'Understory', 'gal.close': 'Close ✕',
         'hero.place': 'Cimitarra · Santander · Colombia',
         'hero.sub': 'Reserva San Juan de Frías',
         'hero.tag': 'Two hundred and eighteen untouched hectares of virgin forest. Six lodges you will barely see.',
@@ -474,6 +521,13 @@
     // ---------- reveal on scroll ----------
     const io = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ---------- lightbox galería ----------
+    const lb = document.getElementById('lb');
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('[data-full]').forEach(t => t.addEventListener('click', () => { lbImg.src = t.getAttribute('data-full'); lb.classList.add('open'); }));
+    lb.addEventListener('click', () => { lb.classList.remove('open'); lbImg.src = ''; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; } });
   </script>
 </body>
 </html>
